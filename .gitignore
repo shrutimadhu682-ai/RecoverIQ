@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.db
+*.sqlite3
+venv/
+.venv/
+
+# Environment variables
+.env
+.env.*
+
+# Keep example environment file
+!.env.example
+
+# Node
+node_modules/
+dist/
+
+# VS Code
+.vscode/
+
+# System files
+.DS_Store
+Thumbs.db
