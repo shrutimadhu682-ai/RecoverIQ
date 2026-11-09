@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - SECRET_KEY=recoveriq-super-secret-production-key-2026
+      - DATABASE_URL=sqlite:///./recoveriq.db
+      - MONGODB_URL=mongodb://mongodb:27017/
+      - MONGODB_DB_NAME=recoveriq_db
+    depends_on:
+      - mongodb
+    volumes:
+      - backend-data:/app
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+
+  mongodb:
+    image: mongo:6.0
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  backend-data:
+  mongo-data:
