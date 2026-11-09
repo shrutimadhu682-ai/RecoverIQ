@@ -1,25 +1,27 @@
-# Python
+# Python cache
 __pycache__/
 *.py[cod]
-*.db
-*.sqlite3
+
+# Virtual environments
 venv/
 .venv/
 
-# Environment variables
+# Database
+*.db
+*.sqlite3
+
+# Environment secrets
 .env
 .env.*
-
-# Keep example environment file
 !.env.example
 
 # Node
 node_modules/
 dist/
 
-# VS Code
+# IDE
 .vscode/
 
-# System files
+# System
 .DS_Store
 Thumbs.db
